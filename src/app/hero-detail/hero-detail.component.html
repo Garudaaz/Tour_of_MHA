@@ -1,0 +1,37 @@
+<!-- <div *ngIf="hero">
+
+    <h2>{{hero.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="hero.name" placeholder="name"/>
+      </label>
+    </div>
+  
+  </div> -->
+
+  <div *ngIf="mhaHero">
+
+    <!-- <h2>{{mhaHero.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{mhaHero.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="mhaHero.name" placeholder="name"/>
+      </label>
+    </div> -->
+
+    <h2>{{mhaHero.name | uppercase}}</h2>
+    <img src="{{mhaHero.images[mhaHero.images.length-1]}}">
+    <div>
+      <span>id: </span>{{mhaHero.id}}</div>
+    <div *ngIf="mhaHero.name">
+      <span>Name: </span>{{mhaHero.name}}
+    </div>
+    <div *ngIf="mhaHero.alias">
+      <span>Alias: </span>{{mhaHero.alias}}
+    </div>
+  
+  </div>
+
+  <button (click)="goBack()">go back</button>
+  <!-- <button (click)="save()">save</button> -->

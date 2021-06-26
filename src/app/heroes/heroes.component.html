@@ -1,0 +1,38 @@
+<h2>My Heroes</h2>
+
+<!-- <div>
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+</div>
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+      <button class="delete" title="delete hero"
+        (click)="delete(hero)">x</button>
+    </a>
+  </li>
+</ul> -->
+
+<ul class="heroes">
+  <li *ngFor="let hero of mhaHeroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <div *ngIf="hero.alias">
+        <img class="badge" src="{{hero.images[hero.images.length-1]}}"> {{hero.alias}}
+      </div>
+      <div *ngIf="!hero.alias && hero.name">
+        <img class="badge" src="{{hero.images[hero.images.length-1]}}"> {{hero.name}}
+      </div>
+      <div *ngIf="!hero.alias && !hero.name">
+        <img class="badge" src="{{hero.images[hero.images.length-1]}}"> {{hero.id}}
+      </div>
+    </a>
+  </li>
+</ul>
+
+<app-hero-detail></app-hero-detail>
